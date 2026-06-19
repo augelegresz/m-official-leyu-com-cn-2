@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://augelegresz.github.io/m-official-leyu-com-cn-2/sitemap.xml
