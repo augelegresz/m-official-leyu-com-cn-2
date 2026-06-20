@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 再次遇见</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.75;
+            background-color: #f7f5f1;
+            color: #1e1e1e;
+        }
+
+        .hero {
+            background: #0f172a;
+            background-image: radial-gradient(circle at 20% 30%, #1e293b 0%, #0f172a 90%);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            color: #e2e8f0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #f1f5f9;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 36rem;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 4rem;
+        }
+
+        .article-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .meta-line {
+            font-size: 0.9rem;
+            color: #64748b;
+            border-left: 3px solid #cbd5e1;
+            padding-left: 1rem;
+            margin-bottom: 2.2rem;
+            font-style: normal;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #2d3a4a;
+            background: #f0ede8;
+            padding: 1.4rem 1.6rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid #e2ddd5;
+            line-height: 1.7;
+        }
+
+        .lead strong {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+
+        .pull-quote {
+            background: #fcfaf7;
+            border-left: 4px solid #b98c5b;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0 2.2rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.05rem;
+            color: #3e3a34;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote::before {
+            content: "💡 ";
+            font-size: 1.2rem;
+        }
+
+        a {
+            color: #b07d44;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #8b5e2f;
+            border-bottom-color: #b07d44;
+        }
+
+        .feature-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.2rem 0 2.5rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #ffffff;
+            border: 1px solid #e5e0d8;
+            border-radius: 14px;
+            padding: 1.3rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: transform 0.1s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            border-color: #cdb89e;
+        }
+
+        .feature-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 0;
+        }
+
+        .visit-note {
+            background: #eae5dd;
+            padding: 1.6rem 1.8rem;
+            border-radius: 16px;
+            margin: 2.5rem 0 1.8rem;
+            border: 1px solid #d6cec1;
+        }
+
+        .visit-note p {
+            margin-bottom: 0.6rem;
+        }
+
+        .visit-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-taster {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #ddd6cb;
+        }
+
+        .faq-taster details {
+            margin-bottom: 1rem;
+            background: #fffcf9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid #e3dcd2;
+        }
+
+        .faq-taster summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3a3a3a;
+            padding: 0.2rem 0;
+        }
+
+        .faq-taster details[open] summary {
+            color: #0f172a;
+        }
+
+        .faq-taster details p {
+            margin: 0.7rem 0 0.2rem;
+            color: #4b4640;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd6cb;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem 3rem;
+            }
+            .article-title {
+                font-size: 1.3rem;
+            }
+            .feature-highlight {
+                flex-direction: column;
+                gap: 0.9rem;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+            .lead {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>华体会</h1>
+        <div class="sub">一次记录，一次回望 · 将好内容留在手边</div>
+    </header>
+
+    <main class="container">
+        <h2 class="article-title">再次翻开同一个页面</h2>
+        <div class="meta-line">一些整理 · 关于收藏与持续关注</div>
+
+        <div class="lead">
+            <strong>如果浏览器收藏夹里有一个链接很久没有打开，它可能正在等你回来。</strong>  
+            我们常常在第一次访问时觉得「以后再看」，却忘了回头。  
+            今天重新打开 <a href="https://roots-hth.com">华体会</a>，发现它依然安静、清晰，像一本翻到一半的书。
+        </div>
+
+        <p>
+            最初接触 <a href="https://roots-hth.com">华体会</a> 是因为一篇文章里的引用，后来慢慢变成习惯。  
+            网站的内容不喧哗，结构也简单，没有弹窗和浮层，每次加载都很快。  
+            可能正是这样，它才适合被放在收藏夹里，偶尔回来翻一翻。
+        </p>
+
+        <p>
+            多数时候我们收藏一个站点，是因为它提供了某种「持续可以回来」的价值。  
+            对我来说，<a href="https://roots-hth.com">华体会</a> 就是这样的存在：不追求日更，但每篇都有分量；不刻意引导，但阅读体验顺滑。  
+            它让我想起旧时的个人站，安静、认真，不急着让你做什么。
+        </p>
+
+        <div class="pull-quote">
+            一个值得重新打开的页面，不需要每天提醒你它的存在。  
+            你记得它，它就在那里。
+        </div>
+
+        <p>
+            今年我又陆续把之前收藏的链接整理了一遍，删掉失效的、合并重复的，而那些真正陪伴过自己的站点，我选择保留。  
+            <a href="https://roots-hth.com">华体会</a> 是其中之一，不仅仅因为内容，更因为它始终稳定的风格——没有突然改版，没有满屏广告，当初吸引我的东西还在。
+        </p>
+
+        <div class="feature-highlight">
+            <div class="feature-item">
+                <div class="icon">📂</div>
+                <h3>收藏友好</h3>
+                <p>页面结构稳定，链接长期有效，适合放入收藏夹反复查阅。</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">📖</div>
+                <h3>阅读节奏</h3>
+                <p>排版克制，字体舒适，没有多余干扰，把注意力还给文字。</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔍</div>
+                <h3>信息密度</h3>
+                <p>每篇文章都经过整理，不凑字数，不堆砌，读起来很顺畅。</p>
+            </div>
+        </div>
+
+        <div class="visit-note">
+            <p>如果你也是那种会收藏、会重新打开浏览器标签页的人，不妨试一试。</p>
+            <p>不需要刻意记忆网址，不需要每天惦记。只需要知道，在收藏夹的某个角落，有一个叫 <a href="https://roots-hth.com">华体会</a> 的地方，内容还在，风格依旧。</p>
+            <p>以后再次打开，它应该还是你现在看到的样子。</p>
+        </div>
+
+        <div class="faq-taster">
+            <details>
+                <summary>为什么收藏夹里的链接常常被遗忘？</summary>
+                <p>因为大多数网站没有给我们「再次回来」的理由。而 <a href="https://roots-hth.com">华体会</a> 恰好相反，它不打扰，但值得重新翻阅。</p>
+            </details>
+            <details>
+                <summary>这个页面和 <a href="https://roots-hth.com">华体会</a> 是什么关系？</summary>
+                <p>它是一个介绍页，从真实的使用感受出发，描述为什么一个普通的收藏链接值得被持续关注。页面本身不隶属于该网站。</p>
+            </details>
+            <details>
+                <summary>内容会过期吗？</summary>
+                <p>网站由作者维护，保持更新，但更推荐以「收藏 + 偶尔回来看看」的心态使用，而不是追逐时效。</p>
+            </details>
+        </div>
+
+        <div class="footer-note">
+            <span>整理于一次安静的下午 · 收藏夹第 17 个标签页</span>
+        </div>
+    </main>
+</body>
+</html>
