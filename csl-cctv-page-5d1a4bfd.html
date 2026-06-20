@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>中超直播 · 稳定入口｜CSL</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f7fb;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 0 16px;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 0 60px;
+    }
+
+    /* ===== hero ===== */
+    .hero {
+      background: linear-gradient(145deg, #0b2c3a 0%, #1a5b6b 80%);
+      border-radius: 36px 36px 36px 36px;
+      padding: 48px 28px 52px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 30px rgba(6, 78, 89, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(72, 199, 200, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #e0f2fe;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 span {
+      background: linear-gradient(130deg, #80e0d4, #9de8e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 620px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .btn-link {
+      display: inline-block;
+      background: #2d7d8a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.1s;
+      box-shadow: 0 4px 12px rgba(0, 40, 45, 0.25);
+      font-size: 1.1rem;
+    }
+    .hero .btn-link:hover {
+      background: #3f9caa;
+      transform: translateY(-3px);
+    }
+    .hero .btn-outline {
+      background: transparent;
+      border: 1.5px solid #6bb4bf;
+      color: #d9edf0;
+      box-shadow: none;
+    }
+    .hero .btn-outline:hover {
+      background: rgba(107, 180, 191, 0.12);
+      border-color: #88ced9;
+    }
+
+    /* ===== 优势区 网格卡片 ===== */
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 48px 0 24px;
+      color: #0b3b44;
+      letter-spacing: -0.01em;
+      border-left: 6px solid #2d9ba8;
+      padding-left: 18px;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 26px 20px 22px;
+      box-shadow: 0 6px 20px rgba(6, 78, 89, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e1edf0;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(6, 78, 89, 0.10);
+      border-color: #b6d7de;
+    }
+    .card .icon {
+      display: inline-block;
+      background: #d5f0f3;
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      line-height: 48px;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #136672;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0a3843;
+    }
+    .card p {
+      font-size: 0.96rem;
+      color: #3f5660;
+    }
+
+    /* ===== 说明区 ===== */
+    .explain-block {
+      background: #eef8fa;
+      border-radius: 28px;
+      padding: 32px 28px;
+      margin: 40px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+      border: 1px solid #cce3e8;
+    }
+    .explain-text {
+      flex: 2;
+      min-width: 260px;
+    }
+    .explain-text h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0b3b44;
+      margin-bottom: 12px;
+    }
+    .explain-text p {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .explain-text a {
+      color: #0f6b7a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+    .explain-text a:hover {
+      color: #1c8b9c;
+    }
+    .explain-highlight {
+      flex: 1;
+      min-width: 180px;
+      background: #d3e9ee;
+      border-radius: 20px;
+      padding: 20px 18px;
+      font-size: 0.95rem;
+      color: #09434f;
+    }
+    .explain-highlight strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #06303a;
+    }
+
+    /* ===== FAQ 摘要 ===== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+      margin: 20px 0 30px;
+    }
+    .faq-item {
+      background: white;
+      padding: 20px 18px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,40,45,0.04);
+      border-left: 4px solid #4babb9;
+    }
+    .faq-item .q {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #104652;
+    }
+    .faq-item .a {
+      font-size: 0.92rem;
+      color: #3a5b64;
+    }
+
+    /* ===== 底部链接 ===== */
+    .footer-links {
+      margin-top: 50px;
+      padding-top: 28px;
+      border-top: 1px solid #cde1e6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-links .copy {
+      font-size: 0.9rem;
+      color: #597680;
+    }
+    .footer-links .nav-links a {
+      margin-left: 14px;
+      color: #146473;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px dotted transparent;
+    }
+    .footer-links .nav-links a:hover {
+      border-bottom-color: #0b6f80;
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero {
+        padding: 36px 20px 40px;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .explain-block {
+        flex-direction: column;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <section class="hero">
+    <h1>看中超 · 找<span>稳定入口</span></h1>
+    <p>从比赛日提醒到流畅页面，我们整理了直达中超直播的实用信息。不用绕路，打开就能看到绿茵对抗。</p>
+    <div class="btn-group">
+      <a href="https://csl-cctv.com" class="btn-link">中超直播</a>
+      <a href="https://csl-cctv.com" class="btn-link btn-outline">中超直播</a>
+    </div>
+  </section>
+
+  <!-- 优势区：网格卡片 -->
+  <h2 class="section-title">为什么从这里开始</h2>
+  <div class="grid-cards">
+    <div class="card">
+      <div class="icon">📡</div>
+      <h3>直达页面</h3>
+      <p>一次点击就能进入直播区域，省去层层跳转。页面结构清晰，适合比赛前快速就位。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🕒</div>
+      <h3>赛程整合</h3>
+      <p>关键比赛日、开球时间、对阵信息都在同一视图下展示，不用另外搜索。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>移动端顺手</h3>
+      <p>卡片布局和按钮适配手机屏幕，横竖屏都能流畅操作。路上、家里都能随时关注。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔗</div>
+      <h3>链接稳定</h3>
+      <p>使用长期维护的入口地址，减少因链接变动带来的中断。比赛日更省心。</p>
+    </div>
+  </div>
+
+  <!-- 说明区（嵌入核心链接） -->
+  <div class="explain-block">
+    <div class="explain-text">
+      <h2>关于这个入口</h2>
+      <p>中超赛季漫长，每一轮都有看点。我们推荐直接使用 <a href="https://csl-cctv.com">中超直播</a> 作为日常访问的第一站。页面聚合了直播频道、实时比分和近期赛程，避免在各个平台间反复切换。</p>
+      <p>无论你是关注申花、泰山还是三镇的比赛，都能通过这个入口快速找到对应场次。页面信息更新与官方数据同步，让你不错过开场哨。</p>
+    </div>
+    <div class="explain-highlight">
+      <strong>⚽ 适合这样的你</strong>
+      下班后想看一场完整直播<br>
+      出差路上需要手机快速打开<br>
+      想了解本轮比赛对阵时间<br>
+      希望少点广告、多点内容
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <h2 class="section-title">常见问题 · 速览</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="q">📺 直播需要额外插件吗？</div>
+      <div class="a">一般不需要。页面基于网页播放器，浏览器打开即可观看。部分频道可能需要关闭广告拦截插件。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">🕓 比赛回放哪里找？</div>
+      <div class="a"><a href="https://csl-cctv.com" style="color:#0f6b7a;">中超直播</a> 页面有时会提供近期回放入口，也可以关注赛后集锦栏目。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">📱 手机体验如何？</div>
+      <div class="a">页面采用自适应布局，卡片和按钮在手机上大小适中。支持横屏全屏播放。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">🔒 链接安全吗？</div>
+      <div class="a">我们仅推荐可靠的官方合作入口，不嵌入第三方不明来源。请放心使用。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <div class="copy">© CSL 入口 · 中超直播信息聚合</div>
+    <div class="nav-links">
+      <a href="https://csl-cctv.com">中超直播</a>
+      <a href="https://csl-cctv.com">中超直播</a>
+      <a href="#">关于本站</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
